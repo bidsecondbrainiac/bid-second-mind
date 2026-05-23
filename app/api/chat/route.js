@@ -42,7 +42,10 @@ export async function POST(request) {
       )
     }
 
-    const reply = data.choices && data.choices[0] && data.choices[0].message ? data.choices[0].message.content : 'Sorry, I could not process that.'
+    var reply = 'Sorry, I could not process that.'
+    if (data.choices && data.choices[0] && data.choices[0].message) {
+      reply = data.choices[0].message.content
+    }
     return Response.json({ reply })
   } catch (error) {
     return Response.json(
