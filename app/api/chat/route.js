@@ -26,7 +26,7 @@ export async function POST(request) {
         'Authorization': 'Bearer ' + apiKey,
       },
       body: JSON.stringify({
-        model: 'gemma2-9b-it',
+        model: 'llama-3.1-8b-instant',
         messages: groqMessages,
         max_tokens: 1024,
         temperature: 0.7,
